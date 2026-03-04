@@ -4,13 +4,13 @@ ISurveyInstanceService.cs
 Сам интерфейс наследует IEntityService — значит сервис умеет и базовый CRUD и всё что перечислено ниже.
 Методы
 
-StartSurvey — начать опрос
-SubmitAnswerAsync — отправить ответ на текущий вопрос
-GetCurrentStepAsync — получить текущий вопрос
-CompleteAsync — завершить опрос
-RejectAsync — отменить опрос
-GetHistoryAsync — история всех ответов и событий
-ProcessTimeoutAsync — обработка таймаута (вызывается фоновой задачей если пользователь завис)
+- `StartSurvey` — начать опрос
+`SubmitAnswerAsync` — отправить ответ на текущий вопрос
+`GetCurrentStepAsync` — получить текущий вопрос
+`CompleteAsync` — завершить опрос
+`RejectAsync` — отменить опрос
+`GetHistoryAsync` — история всех ответов и событий
+`ProcessTimeoutAsync` — обработка таймаута (вызывается фоновой задачей если пользователь завис)
 
 Интересное
 ProcessTimeoutAsync не торчит наружу через контроллер — значит где-то есть фоновая задача которая сама вызывает этот метод если пользователь не отвечал 30 минут.
