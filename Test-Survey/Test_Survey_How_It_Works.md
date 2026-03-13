@@ -35,3 +35,5 @@ isFinished: true → конец
 
 ### multiple-choice-question.component.ts
 Наследует `QuestionBaseComponent`. Отвечает за чекбоксы. Хранит два списка — `selectedAnswerIds` и `selectedLabelValues`. При каждом клике обновляет оба списка через `updateSelectedAnswers()`
+
+# Флоу: старт → вопрос → ответ → следующий вопрос → конец
