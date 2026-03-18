@@ -55,7 +55,7 @@ applyVisualSchema()
 
 ### survey-editor.component.ts (фронт)
 Главный компонент редактора, загружает опрос по ID из URL, при сохранении вызывает `toBackendSchema()`, Перед сохранением валидирует схему, 
-если опрос уже опубликован — предлагает создать новую версию через `createNewVersion()`.
+если опрос уже опубликован — предлагает создать новую версию через `createNewVersion()`
 
 Ключевые методы:
 - `loadSurvey()` — загружает опрос из бэка и восстанавливает канвас
@@ -70,12 +70,14 @@ applyVisualSchema()
 - `applyVisualSchema()` — восстанавливает позиции элементов из сохранённых координат
 
 ### survey-defenition.service.ts (фронт)
-Angular сервис для HTTP запросов. Наследует `BaseCRUDService` — CRUD из коробки. Эндпоинт: `surveysengine/SurveyDefinition`. Дополнительно:
+Angular сервис для HTTP запросов. Наследует `BaseCRUDService` — CRUD из коробки. Эндпоинт: `surveysengine/SurveyDefinition` 
+    Дополнительно:
 - `publishSurvey()` → POST `/{id}/publish`
 - `createNewVersion()` → POST `/{id}/create-version`
 
 ### SurveyDefinitionController.cs (бэк)
-Контроллер с GUID. Наследует `BaseCRUDController` — CRUD из коробки. Дополнительно:
+Контроллер с GUID. Наследует `BaseCRUDController` — CRUD из коробки
+    Дополнительно:
 - `POST /{id}/publish` — публикует опрос
 - `POST /{id}/archive` — архивирует
 - `POST /{id}/create-version` — новая версия
@@ -117,7 +119,7 @@ Angular сервис для HTTP запросов. Наследует `BaseCRUDS
 
 ### BaseEntityService.cs (бэк)
 В проекте много разных сущностей — опросы, пользователи, категории. У каждой нужен один и тот же набор операций: создать, обновить, удалить, получить
-`BaseEntityService` — это шаблон который написали один раз, и все сервисы просто наследуют его вместо того чтобы писать одно и то же по 10 раз.
+`BaseEntityService` — это шаблон который написали один раз, и все сервисы просто наследуют его вместо того чтобы писать одно и то же по 10 раз
 
 `SurveyDefinitionService` говорит: "Беру всё из базового класса, но перед сохранением хочу ещё провалидировать схему и посчитать вопросы" — и вызывает `base.AddAsync()` когда своя логика отработала
 
