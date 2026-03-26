@@ -1,4 +1,4 @@
-# Middleware — глубокий разбор
+# Middleware — полный разбор
  
 ## Что такое Middleware
  
