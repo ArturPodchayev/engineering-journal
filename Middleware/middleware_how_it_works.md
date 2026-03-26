@@ -133,7 +133,7 @@ context.Items["User"] = user
  
 **AccessDepthType** — глубина доступа к данным:
 - `All` — видно все
-- `Partial` — видно только все
+- `Partial` — видно только свое
 - `Public` — минимум
 
 Атрибут `[RoleHasAccess("Unauthorized")]` — озночает что в системе этот эндпоинт доступен без авторизации и именно поэтому `authorizeWithToken` работает без JWT токена в заголовке
