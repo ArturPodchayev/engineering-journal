@@ -139,6 +139,15 @@ public async Task<LongStorageFileRPCResponseDTO> Process(int source, LongStorage
           → Name, Size, Code, Mime, FileUrl...
 ```
 
+Id — идентификатор файла
+Name, FileName — название
+Size, FileSize — размер
+Code — уникальный код файла
+Mime, ContentType — тип файла
+FileUrl — ссылка на файл
+FileStorageType — тип хранилища (File / ChunkedFile)
+CreatedOn — дата создания
+
 ---
 
 ## Что я лично взял на заметку
