@@ -6,13 +6,11 @@
 ### как это работает?
 1. пользователь переходит по ссылке (http://localhost:4201?token=токен)
 2. app.component.ts читает токен из URL в ngOnInit
-3. вызывается GET /identity/Authorization/authorizeWithToken?temporaryToken=...
+3. temporaryTokenInterceptor вешает его на каждый запрос как Authorization: tmp <токен>
 4. бэк возвращает JWT и он сохраняется в sessionStorage
 5. temporaryTokenInterceptor подставляет JWT как Authorization: биррер на последующие запросы
 
 ### почему именно так?
-- temporaryTokenInterceptor нельзя оставлять в цепочке — он добавляет ?token= ко всем запросам включая сам authorizeWithToken, что ломает обмен
-- telegramAuthInterceptor вешает tma хедер на все запросы — нужно исключение для authorizeWithToken иначе бэк получает авторизованный запрос на Unauthorized эндпоинт и падает с 500
 - + в base64 токене декодируется браузером как пробел — нужно читать URL через window.location.search.replace(/\+/g, '%2B') перед передачей в URLSearchParams
 
 ### ключевые файлы
