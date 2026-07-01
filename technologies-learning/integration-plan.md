@@ -43,4 +43,4 @@
 
 **`fingerprint_geo`** — данные от job (country , city, proxy_type)
 
-## схема системного дизайна - https://miro.com/app/board/uXjVHAcRzgc=/?share_link_id=824914227896 
+### схема системного дизайна - https://miro.com/app/board/uXjVHAcRzgc=/?share_link_id=824914227896 
